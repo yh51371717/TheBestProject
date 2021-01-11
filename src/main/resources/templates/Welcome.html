@@ -7,7 +7,7 @@
 <body>
 您好,欢迎来到世界上最好的java项目<br><br><br>
 
-<form role="form" action="/loginIn" method="post">
+<form role="form" action="/user/loginIn" method="post">
     账号：<input type="text" id="name" name="name"> <br><br><br><br>
     密码：<input type="password" id="password" name="password"> <br><br><br>
     <input type="submit" id="login" value="登陆">
@@ -15,25 +15,25 @@
 
 <br><br><br>
 
-<form role="form" action="/register" method="post">
+<form role="form" action="/user/register" method="post">
     账号：<input type="text" id="rname" name="name"> <br><br><br><br>
     密码：<input type="password" id="rpassword" name="password"> <br><br><br>
     <input type="submit" id="regis" value="注册">
 </form>
 <br><br><br>
 
-<form role="form" action="/deleteById" method="post">
+<form role="form" action="/user/deleteById" method="post">
     想删除的id：<input type="text" id="deletdId" name="id"> <br><br><br><br>
     <input type="submit"  value="删除">
 </form><br>
 
-<form role="form" action="/deleteByName" method="post">
+<form role="form" action="/user/deleteByName" method="post">
     想删除的人：<input type="text"  name="name"> <br><br><br><br>
     <input type="submit"  value="删除">
 </form>
 
-<a href="/getAllUsers">查询全部用户</a><br>
-<a href="/redisTemplate">用RedisTempalate存储</a>
+<a href="/user/getAllUsers">查询全部用户</a><br>
+<a href="/user/redisTemplate">用RedisTempalate存储</a>
 
 </body>
 </html>

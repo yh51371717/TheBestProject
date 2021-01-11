@@ -27,6 +27,7 @@ import java.util.concurrent.TimeUnit;
  **/
 
 @Controller
+@RequestMapping("/user")
 public class UserController {
 
 
