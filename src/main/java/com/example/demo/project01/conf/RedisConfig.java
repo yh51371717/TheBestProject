@@ -8,7 +8,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.jsontype.impl.LaissezFaireSubTypeValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -84,14 +83,16 @@ public class RedisConfig extends CachingConfigurerSupport {
     }
 
 
-    /*
-     * @Author 袁昊
-     * @RedisTemplate //将RedisTemplate的序列化方式改为json
-     * @Date 2021年1月7日 14:28:05
-     * @Param
-     * @return
-     **/
 
+
+    /**
+     * @Description 将RedisTemplate的序列化方式改为json
+     * @Date 15:34 2021/1/11
+     * @Param [connectionFactory]
+     * @return
+     * @Author 袁昊
+     * @since JDK 1.8
+     */
     @Bean(value = "redisTemplate")
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory connectionFactory) {
         RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
