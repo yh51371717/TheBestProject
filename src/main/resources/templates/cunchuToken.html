@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>存储Token</title>
+</head>
+<body>
+
+<script>
+
+
+    var token = Xxxx  //Ajax传过来的token值
+
+    localStorage.setItem("token",token);             //存值
+    localStorage.getItem("token");              //取值
+    localStorage.removeItem("token");           //删值
+
+    $.ajax({
+        type:"post",
+        async:false,
+        data:{"param":"taskType"},
+        url:"/cevaportal/surveyTaskCreate/initTaskType",
+        headers:{"token":localStorage.getItem("token")},
+        success:function(data){
+            alert("成功了")
+        }
+    });
+</script>
+
+
+</body>
+</html>
