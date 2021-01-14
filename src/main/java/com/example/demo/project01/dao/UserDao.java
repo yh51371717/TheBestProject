@@ -23,7 +23,5 @@ public interface UserDao {
     int deleteById(@Param("id")int id);
 
     int deleteByName(@Param("name")String name);
-
-
-
+    
 }

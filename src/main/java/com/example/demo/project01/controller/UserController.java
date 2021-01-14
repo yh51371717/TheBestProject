@@ -4,6 +4,7 @@ import com.example.demo.project01.dao.UserDao;
 import com.example.demo.project01.pojo.Resulet;
 import com.example.demo.project01.pojo.User;
 import com.example.demo.project01.service.UserService;
+import com.example.demo.project01.test.getMacAddrByIp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpRequest;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 import java.time.Duration;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
@@ -116,5 +119,15 @@ public class UserController {
         Boolean delete  = redisTemplate.delete(token);
 
         return delete;
+    }
+
+    @RequestMapping("/selectIp")
+    @ResponseBody
+    public String aaaa(HttpServletRequest request) throws SocketException, UnknownHostException {
+
+         String ip = getMacAddrByIp.getIpAddress(request);
+         String mac = getMacAddrByIp.getLocalMac(ip);
+        System.out.println(ip+"------------"+mac);
+        return ip+"------------"+mac;
     }
 }
