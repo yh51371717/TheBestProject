@@ -6,19 +6,18 @@ import com.example.demo.project01.pojo.User;
 import com.example.demo.project01.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.http.HttpRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.net.SocketException;
-import java.net.UnknownHostException;
+
 import java.time.Duration;
+import java.util.Date;
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
+
 
 /**
  * @ClassName UserController
@@ -120,5 +119,17 @@ public class UserController {
         return delete;
     }
 
+    @RequestMapping("/tableSystem")
+
+    public String tableSystem(){
+        return "shangewanggeSystem";
+    }
+
+    @RequestMapping("/time")
+    @ResponseBody
+    public String time(){
+
+        return userService.addTime(new Date()).getMsg();
+    }
 
 }

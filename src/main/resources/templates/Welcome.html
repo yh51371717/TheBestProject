@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Best</title>
+    <script src="../static/js/jquery-3.4.1.js"></script>
 </head>
 <body>
 您好,欢迎来到世界上最好的java项目<br><br><br>
@@ -12,6 +13,13 @@
     密码：<input type="password" id="password" name="password"> <br><br><br>
     <input type="submit" id="login" value="登陆">
 </form>
+
+<button onclick="x()">点我弹窗</button>
+<script>
+    function x() {
+        alert("弹窗了噢");
+    }
+</script>
 
 <br><br><br>
 
@@ -33,7 +41,8 @@
 </form>
 
 <a href="/user/getAllUsers">查询全部用户</a><br>
-<a href="/user/redisTemplate">用RedisTempalate存储</a>
-
+<a href="/user/redisTemplate">用RedisTempalate存储</a><br>
+<a href="/user/tableSystem">点我去栅格网格系统</a><br>
+<a href="/user/time">添加时间数据</a><br>
 </body>
 </html>

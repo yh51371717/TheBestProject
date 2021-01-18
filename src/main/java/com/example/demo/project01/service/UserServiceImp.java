@@ -11,6 +11,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -58,6 +59,18 @@ public class UserServiceImp implements UserService{
             resulet.setMsg("删除成功");
         }else {
             resulet.setMsg("删除失败");
+        }
+        return resulet;
+    }
+
+    @Override
+    public Resulet addTime(Date date) {
+        int a = userDao.addTime(date);
+        Resulet resulet=new Resulet();
+        if (a>0){
+            resulet.setMsg("添加成功");
+        }else {
+            resulet.setMsg("添加失败");
         }
         return resulet;
     }

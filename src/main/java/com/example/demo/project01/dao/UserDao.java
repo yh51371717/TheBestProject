@@ -6,6 +6,7 @@ import com.example.demo.project01.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -23,5 +24,6 @@ public interface UserDao {
     int deleteById(@Param("id")int id);
 
     int deleteByName(@Param("name")String name);
-    
+
+    int addTime(@Param("date") Date date);
 }

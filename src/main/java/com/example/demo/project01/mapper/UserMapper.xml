@@ -24,7 +24,7 @@
     </select>
     
     <insert id="register">
-        insert into user (username,password) values (#{name},#{password});
+        insert into user (username,password) values (#{name},#{password})
     </insert>
 
 
@@ -35,6 +35,10 @@
     <delete id="deleteByName">
         delete from user where username = #{name}
     </delete>
+
+    <insert id="addTime">
+        insert into time values (#{date})
+    </insert>
 
 
 </mapper>

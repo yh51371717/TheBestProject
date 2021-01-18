@@ -5,6 +5,7 @@ import com.example.demo.project01.pojo.Resulet;
 import com.example.demo.project01.pojo.User;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 
 public interface UserService {
@@ -18,5 +19,7 @@ public interface UserService {
      Resulet deleteById(@Param("id")int id);
 
      Resulet deleteByName(@Param("id")String name);
+
+     Resulet addTime(@Param("date")Date date);
 
 }
