@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @Mapper
-public interface UserDao { // 所答
+public interface UserDao { // 所答大叔大婶
 
     List<User> getAllUsers();
 
