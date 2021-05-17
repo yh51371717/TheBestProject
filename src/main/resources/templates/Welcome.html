@@ -3,46 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Best</title>
-    <script src="../static/js/jquery-3.4.1.js"></script>
+    <script src="/js/jquery-3.4.1.js"></script>
+    <script src="/js/demo01的js文件.js"></script>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 您好,欢迎来到世界上最好的java项目<br><br><br>
-
-<form role="form" action="/user/loginIn" method="post">
-    账号：<input type="text" id="name" name="name"> <br><br><br><br>
-    密码：<input type="password" id="password" name="password"> <br><br><br>
-    <input type="submit" id="login" value="登陆">
-</form>
-
-<button onclick="x()">点我弹窗</button>
+<button id="b1" onclick="x()">点我请求map集合</button>
 <script>
+    function f() {
+        $.ajax({
+            type: "post",
+            url: "/t1",
+            success: function (data) {
+                console.log(data['3A3F995319404C7CBA4257300ACBBDBB']);
+            },
+            error: function () {
+                alert("查询用户失败，请重试！");
+            }
+        });
+    }
+
     function x() {
-        alert("弹窗了噢");
+        $.ajax({
+            type: "post",
+            url: "/t2",
+            success: function (data) {
+                console.log(data);
+            },
+            error: function () {
+                alert("查询用户失败，请重试！");
+            }
+        });
     }
 </script>
 
-<br><br><br>
-
-<form role="form" action="/user/register" method="post">
-    账号：<input type="text" id="rname" name="name"> <br><br><br><br>
-    密码：<input type="password" id="rpassword" name="password"> <br><br><br>
-    <input type="submit" id="regis" value="注册">
-</form>
-<br><br><br>
-
-<form role="form" action="/user/deleteById" method="post">
-    想删除的id：<input type="text" id="deletdId" name="id"> <br><br><br><br>
-    <input type="submit"  value="删除">
-</form><br>
-
-<form role="form" action="/user/deleteByName" method="post">
-    想删除的人：<input type="text"  name="name"> <br><br><br><br>
-    <input type="submit"  value="删除">
-</form>
-
-<a href="/user/getAllUsers">查询全部用户</a><br>
-<a href="/user/redisTemplate">用RedisTempalate存储</a><br>
-<a href="/user/tableSystem">点我去栅格网格系统</a><br>
-<a href="/user/time">添加时间数据</a><br>
 </body>
 </html>

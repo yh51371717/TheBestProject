@@ -41,7 +41,6 @@ public class LoginFilter implements Filter {
         //查询Redis中的剩余时间是否大于0
         Long expire = redisTemplate.getExpire(redisToken);
 
-
         if (expire>0){
             //如果用户已登录 但是浏览时间过长 为了避免Token失效 我们在用户登录后重置他的Token时长
 

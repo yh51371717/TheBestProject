@@ -47,7 +47,7 @@ public class UserController {
         Resulet resulet =  userService.login(name,password);
         if (resulet.getStatus()==200){
             String token = UUID.randomUUID()+"";
-            redisTemplate.opsForValue().set(token,resulet.getObject(), Duration.ofMinutes(30L));
+            redisTemplate.opsForValue().set(token,resulet.getObject(),Duration.ofMinutes(30L));
             return "loginSuccess";
         }
         return "errorPage";
