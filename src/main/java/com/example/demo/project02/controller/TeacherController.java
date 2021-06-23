@@ -24,8 +24,6 @@ import java.util.Map;
 
 public class TeacherController {
 
-    @Value("${5gGlodenLottoryControl}")
-    private boolean fiveG_GlodenLottoryControl;
 
     @RequestMapping("/t1")
     @ResponseBody
@@ -64,14 +62,5 @@ public class TeacherController {
         return result;
     }
 
-    @RequestMapping("/t2")
-    @ResponseBody
-    public boolean t2(){
-        if (fiveG_GlodenLottoryControl){
-            System.out.println("我是true，开启本逻辑");
-        }else {
-            System.out.println("我是false，关闭本逻辑");
-        }
-        return fiveG_GlodenLottoryControl;
-    }
+
 }
